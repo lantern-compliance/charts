@@ -1,0 +1,17 @@
+global:
+  data: {}
+
+ui:
+  data: {}
+
+api:
+  data: {}
+
+scheduler:
+  data: {}
+
+worker:
+  data: {}
+
+flower:
+  data: {}
