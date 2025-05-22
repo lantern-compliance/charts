@@ -2,6 +2,32 @@ apiVersion: v1
 entries:
   knowledge-admin:
   - apiVersion: v2
+    created: "2025-05-22T08:18:54.728718525Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 21.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Knowledge Admin Interface.
+    digest: 35537e8308033edce3575a1e33731ec6e1170c812d23fdd149141272bf6454f0
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: knowledge-admin
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/knowledge-admin-0.2.0/knowledge-admin-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2025-05-22T08:15:13.003948944Z"
     dependencies:
     - condition: postgresql.enabled
@@ -55,6 +81,24 @@ entries:
     version: 0.1.1
   portal:
   - apiVersion: v2
+    created: "2025-05-22T08:18:54.869890229Z"
+    dependencies:
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Compliance Portal Interface.
+    digest: 0199e18996ff39196a75ff726e3952d03a676b9ce56520e1c5e5802f90f037c8
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: portal
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/portal-0.2.0/portal-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2025-05-22T08:04:14.120498314Z"
     dependencies:
     - name: reactor
@@ -72,4 +116,4 @@ entries:
     urls:
     - https://github.com/lantern-compliance/charts/releases/download/portal-0.1.1/portal-0.1.1.tgz
     version: 0.1.1
-generated: "2025-05-22T08:15:13.003964022Z"
+generated: "2025-05-22T08:18:54.869911068Z"
