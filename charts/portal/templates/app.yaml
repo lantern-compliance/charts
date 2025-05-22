@@ -1,0 +1,4 @@
+{{/*
+Generate the LANTERN Compliance Portal Interface service definition
+*/}}
+{{ include "reactor.app" (list . .Values) }}

@@ -1,4 +1,4 @@
 {{/*
-Generate the Nexical Core Interface4 service definition
+Generate the LANTERN Knowledge Manager Interface service definition
 */}}
-{{ include "zimagi-lib.app" (list . .Values) }}
+{{ include "reactor.app" (list . .Values) }}

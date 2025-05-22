@@ -1,4 +1,0 @@
-{{/*
-Generate the Cellebris Knowledge Center Interface service definition
-*/}}
-{{ include "zimagi-lib.app" (list . .Values) }}

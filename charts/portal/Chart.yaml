@@ -1,0 +1,17 @@
+apiVersion: v2
+version: 0.1.0
+
+name: portal
+type: application
+description: A Helm chart for deploying the LANTERN Compliance Portal Interface.
+home: https://github.com/lantern-compliance/charts
+
+dependencies:
+  - name: reactor
+    repository: https://charts.kube-reactor.com
+    version: 0.2.x
+
+maintainers:
+  - email: adrian@cellebris.com
+    name: adrianwebb
+    url: https://github.com/adrianwebb
