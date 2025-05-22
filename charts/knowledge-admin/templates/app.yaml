@@ -1,4 +1,0 @@
-{{/*
-Generate the LANTERN Knowledge Manager Interface service definition
-*/}}
-{{ include "reactor.app" (list . .Values) }}
