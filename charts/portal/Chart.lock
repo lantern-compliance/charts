@@ -1,0 +1,6 @@
+dependencies:
+- name: reactor
+  repository: https://charts.kube-reactor.com
+  version: 0.2.2
+digest: sha256:43496b936299f2a7164b0bc4e277104c8709c39ba1b95a2ae03c773a6a59bef1
+generated: "2025-05-22T03:56:46.600448588-04:00"
