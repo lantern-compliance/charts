@@ -1,0 +1,49 @@
+apiVersion: v1
+entries:
+  knowledge-admin:
+  - apiVersion: v2
+    created: "2025-05-22T08:04:13.991250476Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 21.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Knowledge Admin Interface.
+    digest: 80670b36370b82d5840f276a6b54fafdac1b7654e844bf40bcb511f7ce23573e
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: knowledge-admin
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/knowledge-admin-0.1.1/knowledge-admin-0.1.1.tgz
+    version: 0.1.1
+  portal:
+  - apiVersion: v2
+    created: "2025-05-22T08:04:14.120498314Z"
+    dependencies:
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Compliance Portal Interface.
+    digest: 0a0cd380aa4dcdee5f734b1e33f4d345db1b000206ee90238848efb628464e42
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: portal
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/portal-0.1.1/portal-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-05-22T08:04:14.120508784Z"
