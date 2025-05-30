@@ -2,6 +2,32 @@ apiVersion: v1
 entries:
   knowledge-admin:
   - apiVersion: v2
+    created: "2025-05-30T21:48:21.150953927Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 21.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Knowledge Admin Interface.
+    digest: 9e898ccdac32d9813174ef1600fd28e8934c242d0843d725faf6f5531cb9e07e
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: knowledge-admin
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/knowledge-admin-0.2.4/knowledge-admin-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
     created: "2025-05-27T22:39:36.899428757Z"
     dependencies:
     - condition: postgresql.enabled
@@ -133,6 +159,28 @@ entries:
     version: 0.1.1
   portal:
   - apiVersion: v2
+    created: "2025-05-30T21:48:21.373954685Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Compliance Portal Interface.
+    digest: 76910c15d368432a1fc4528bcd28cb148fdab8a15ed1718f90496559becf6372
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: portal
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/portal-0.2.4/portal-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
     created: "2025-05-27T22:39:37.052614198Z"
     dependencies:
     - condition: postgresql.enabled
@@ -212,4 +260,4 @@ entries:
     urls:
     - https://github.com/lantern-compliance/charts/releases/download/portal-0.1.1/portal-0.1.1.tgz
     version: 0.1.1
-generated: "2025-05-27T22:39:37.052637061Z"
+generated: "2025-05-30T21:48:21.373999378Z"
