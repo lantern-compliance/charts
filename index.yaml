@@ -185,6 +185,28 @@ entries:
     version: 0.1.1
   portal:
   - apiVersion: v2
+    created: "2025-06-16T03:35:31.134200109Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Compliance Portal Interface.
+    digest: bd30f69f137ce176f6e48e90bc3bcb4d179cdbb40a63d5c63b63a3262817aada
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: portal
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/portal-0.2.6/portal-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
     created: "2025-06-09T05:42:39.916214997Z"
     dependencies:
     - condition: postgresql.enabled
@@ -308,4 +330,4 @@ entries:
     urls:
     - https://github.com/lantern-compliance/charts/releases/download/portal-0.1.1/portal-0.1.1.tgz
     version: 0.1.1
-generated: "2025-06-09T05:42:39.916247428Z"
+generated: "2025-06-16T03:35:31.134235946Z"
