@@ -1,15 +1,13 @@
 global:
   data:
-    NODE_ENV: "${__environment}"
+    BETTER_AUTH_URL: "https://${PRIMARY_DOMAIN}"
 
-    SESSION_COOKIE_NAME: "lantern.session"
+    QDRANT_HOST: qdrant.qdrant
+    QDRANT_PORT: 6333
+    QDRANT_HTTPS: false
+    QDRANT_MIN_SCORE: 0.3
 
-    KNOWLEDGE_ADMIN_PROTOCOL: "http"
-    KNOWLEDGE_ADMIN_HOSTNAME: "localhost"
-    KNOWLEDGE_ADMIN_PORT: "8080"
-
-    QDRANT_HTTPS: "false"
-    QDRANT_HOSTNAME: "qdrant.qdrant"
-    QDRANT_PORT: "6333"
-    QDRANT_COLLECTION: "web_component"
-    QDRANT_MIN_SCORE: "0.3"
+    ZIMAGI_COMMAND_API_HOST: command-api.zimagi
+    ZIMAGI_COMMAND_API_PORT: 80
+    ZIMAGI_DATA_API_HOST: data-api.zimagi
+    ZIMAGI_DATA_API_PORT: 80
