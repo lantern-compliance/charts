@@ -1,5 +1,28 @@
 apiVersion: v1
 entries:
+  audit_chat:
+  - apiVersion: v2
+    created: "2025-08-04T19:01:01.34919171Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.x.x
+    - name: reactor
+      repository: https://charts.kube-reactor.com
+      version: 0.2.x
+    description: A Helm chart for deploying the LANTERN Compliance Chat Interface.
+    digest: ab80a77413ccfb1c10da609377b3161734b37670e0087ed8033cbbf4bea81891
+    home: https://github.com/lantern-compliance/charts
+    maintainers:
+    - email: adrian@cellebris.com
+      name: adrianwebb
+      url: https://github.com/adrianwebb
+    name: audit_chat
+    type: application
+    urls:
+    - https://github.com/lantern-compliance/charts/releases/download/audit_chat-0.1.0/audit_chat-0.1.0.tgz
+    version: 0.1.0
   knowledge-admin:
   - apiVersion: v2
     created: "2025-06-09T05:42:39.743817083Z"
@@ -352,4 +375,4 @@ entries:
     urls:
     - https://github.com/lantern-compliance/charts/releases/download/portal-0.1.1/portal-0.1.1.tgz
     version: 0.1.1
-generated: "2025-08-04T18:06:10.838855488Z"
+generated: "2025-08-04T19:01:01.349215444Z"
