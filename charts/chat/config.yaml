@@ -1,0 +1,8 @@
+global:
+  data:
+    BETTER_AUTH_URL: "https://${AUDIT_CHAT_DOMAIN}"
+
+    ZIMAGI_COMMAND_API_HOST: command-api.zimagi
+    ZIMAGI_COMMAND_API_PORT: 80
+    ZIMAGI_DATA_API_HOST: data-api.zimagi
+    ZIMAGI_DATA_API_PORT: 80

@@ -1,0 +1,132 @@
+labels: {}
+annotations:
+  nginx.ingress.kubernetes.io/proxy-body-size: 0
+  nginx.ingress.kubernetes.io/proxy-connect-timeout: 30
+  nginx.ingress.kubernetes.io/proxy-read-timeout: 1800
+  nginx.ingress.kubernetes.io/proxy-send-timeout: 1800
+
+postgresql:
+  enabled: true
+  fullnameOverride: postgresql
+  architecture: standalone
+  auth:
+    existingSecret: db # keys: postgres-password, replication-password, password
+    database: compliance-chat
+    username: compliance-chat
+  primary:
+    persistence:
+      enabled: true
+      size: 10Gi
+  volumePermissions:
+    enabled: true
+
+image:
+  pullSecrets: []
+  pullPolicy: IfNotPresent
+  repository: ""
+  image: lantern/audit_chat
+  tag: 0.1.0
+
+roles: {}
+
+serviceAccounts: {}
+
+pvc:
+  claims: {}
+  mounts: {}
+
+volumes:
+  config: {}
+  secret: {}
+  host: {}
+
+deployment:
+  replicaCount: 1
+
+  revisionHistoryLimit: 1
+  updateStrategy:
+    type: RollingUpdate
+
+  podSecurityContext: {}
+  containerSecurityContext: {}
+
+  priorityClassName: ""
+  affinity: {}
+  podAffinityPreset: ""
+  podAntiAffinityPreset: soft
+  nodeAffinityPreset:
+    type: ""
+    key: ""
+    values: []
+
+  nodeSelector: {}
+  tolerations: []
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "100Mi"
+
+  env:
+    POSTGRES_HOST: "{{ .Values.postgresql.fullnameOverride }}"
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: "{{ .Values.postgresql.auth.database }}"
+    POSTGRES_USER: "{{ .Values.postgresql.auth.username }}"
+
+  config:
+    - global
+  secrets:
+    - global
+
+  protocol: HTTP
+  port: 8080
+
+  livenessProbe:
+    endpoint: "/api/status"
+    failureThreshold: 20
+    initialDelaySeconds: 5
+    periodSeconds: 6
+    successThreshold: 1
+    timeoutSeconds: 5
+
+  readinessProbe:
+    endpoint: "/api/status"
+    failureThreshold: 3
+    initialDelaySeconds: 10
+    periodSeconds: 5
+    successThreshold: 3
+    timeoutSeconds: 5
+
+autoscaling:
+  minReplicas: 1
+  maxReplicas: 4
+  avgCpuUtilization: 70
+
+service:
+  type: ClusterIP
+  protocol: http
+  port: 80
+
+ingress:
+  className: ""
+  hosts: []
+  tls: []
+  #   - secretName: origin-cert
+
+services:
+  ui:
+    deployment:
+      config:
+        - global
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "1Gi"
+    autoscaling:
+      enabled: false
+    service:
+      enabled: true
+    ingress:
+      enabled: false
+      # hosts:
+      #   - host: "${domain}"
+    annotations: {}

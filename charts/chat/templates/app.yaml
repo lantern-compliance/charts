@@ -1,0 +1,4 @@
+{{/*
+Generate the Lantern Compliance Chat Interface service definition
+*/}}
+{{ include "reactor.app" (list . .Values) }}
